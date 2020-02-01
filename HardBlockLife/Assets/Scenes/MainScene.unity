@@ -726,23 +726,59 @@ MonoBehaviour:
     MyPrefab: {fileID: 1426130948614067748, guid: a489482e543cd9f4c8c31bc662bd7048,
       type: 3}
   - name: redbrick_half
-    MyTiles: []
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
+    - local:
+        x: 1
+        y: 0
+        z: 0
     MyPrefab: {fileID: 1426130948614067748, guid: a489482e543cd9f4c8c31bc662bd7048,
       type: 3}
   - name: whitefoundation_large
-    MyTiles: []
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
+    - local:
+        x: 1
+        y: 0
+        z: 0
+    - local:
+        x: 1
+        y: 0
+        z: 1
+    - local:
+        x: 0
+        y: 0
+        z: 1
     MyPrefab: {fileID: 8667329525806816323, guid: e9a76a60cc8c7424f8ced15d98c13645,
       type: 3}
   - name: whitefoundation_small
-    MyTiles: []
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
     MyPrefab: {fileID: 8990282074633797743, guid: e9fdd174e6c6abe468d22137744eb188,
       type: 3}
   - name: clayroof_corner
-    MyTiles: []
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
     MyPrefab: {fileID: 1168855235775830762, guid: c415c81b6ef5f2747bd732355f95e860,
       type: 3}
   - name: clayroof_wedge
-    MyTiles: []
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
     MyPrefab: {fileID: 474965418087136860, guid: c8b6a0408ad8926439cbfb1e28c0bb8c,
       type: 3}
 --- !u!114 &1477580058
