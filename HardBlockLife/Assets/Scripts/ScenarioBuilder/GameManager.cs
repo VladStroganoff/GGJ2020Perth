@@ -20,10 +20,18 @@ public class GameManager : MonoBehaviour // I dont know. maybe this guy will be 
 
     void TestAllBricks()
     {
+        int i = 0;
+
         foreach (PieceModel piece in AvalableBlocks)
         {
-            //if(TileMapController.instance.WorldModel.TheWorld[])
-                //TileMapController.instance.PlacePiece(piece);
+            if(TileMapController.instance.WorldModel.TheWorld[i,0,0] == null)
+            {
+                TileMapController.instance.PlacePiece(piece);
+            }
+
+
         }
+
+
     }
 }
