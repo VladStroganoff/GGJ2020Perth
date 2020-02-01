@@ -14,9 +14,19 @@ public class PieceModel
 
     public TileType type;
 
+    public void Initialize()
+    {
+        foreach (BlockTileModel tile in MyTiles)
+        {
+            tile.type = type;
+        }
+    }
+
+
     public PieceModel(TileType _type)
     {
         type = _type;
+        Initialize();
     }
 
     /// <summary>
