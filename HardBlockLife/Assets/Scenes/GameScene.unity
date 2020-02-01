@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &346213789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3962023397756088642, guid: 92d75234358db1747b6d683f516ab36f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967806623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &346213794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346213789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dafa1f5f6d496428e419622820b728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &359645744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,7 +744,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 1e0713c6f6600a942beba2a88e071c02,
         type: 3}
       propertyPath: m_Name
-      value: enviplane
+      value: v
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 1e0713c6f6600a942beba2a88e071c02,
         type: 3}
@@ -1198,7 +1216,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1967806623}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 346213789}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff5125e357c323549918b7ff088cb3f9, type: 3}
@@ -1210,7 +1228,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1967806623}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 346213789}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcb96e184cc46194ca947641a4927f59, type: 3}
