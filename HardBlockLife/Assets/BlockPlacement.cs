@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(CubeCast))]
 [RequireComponent(typeof(PreviewCast))]
@@ -11,6 +12,9 @@ public class BlockPlacement : MonoBehaviour
     private GameManager gameManager;
 
     public GameObject currentBlock;
+    public GameObject HouseHolder;
+
+    List<GameObject> PlacedBlocksListInOrder;
 
     public bool blockDroppable;
 
@@ -85,6 +89,8 @@ public class BlockPlacement : MonoBehaviour
     private void CreateNewBlock(GameObject newblock)
     {
         currentBlock = Instantiate(newblock);
+        currentBlock.transform.parent = HouseHolder.transform;
+        PlacedBlocksListInOrder.Add(currentBlock);
     }
 
     private void SpawnRandomBlock(GameObject newblock)
@@ -108,8 +114,6 @@ public class BlockPlacement : MonoBehaviour
         else
             yRot = xNormal * 90 + zNormal * 180;
         currentBlock.transform.eulerAngles = new Vector3(currentBlock.transform.eulerAngles.x, yRot, currentBlock.transform.eulerAngles.z);
-        Debug.Log("normal is:" + cubeCast.currentHitNormal);
-        Debug.Log("----[" + yRot);
     }
 
     private void TrackForPreview(Vector3? hit)
@@ -126,5 +130,12 @@ public class BlockPlacement : MonoBehaviour
         rigidBody.constraints = GetComponent<Rigidbody>().constraints;
 
         currentBlock = null;
+    }
+
+    public void UndoLastBlock()
+    {
+        var lastBlock = PlacedBlocksListInOrder.Count - 1;
+        Destroy(PlacedBlocksListInOrder[lastBlock]);
+        PlacedBlocksListInOrder.RemoveAt(lastBlock);
     }
 }

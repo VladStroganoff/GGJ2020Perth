@@ -32,8 +32,7 @@ public class HouseManager : MonoBehaviour
 
     public void ClearAwayHouse()
     {
-        Debug.Log(HouseHolder.transform.childCount);
-        if (HouseHolder.transform.childCount > 0)
-            Destroy(HouseHolder.transform.GetChild(0).gameObject);
+        for(var i = 0; i < HouseHolder.transform.childCount; i++)
+            Destroy(HouseHolder.transform.GetChild(i).gameObject);
     }
 }
