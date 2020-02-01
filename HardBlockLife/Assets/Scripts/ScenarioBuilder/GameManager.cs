@@ -13,7 +13,17 @@ public class GameManager : MonoBehaviour // I dont know. maybe this guy will be 
     {
         foreach(PieceModel piece in AvalableBlocks)
         {
+
             TileMapController.instance.PlacePiece(piece);
+        }
+    }
+
+    void TestAllBricks()
+    {
+        foreach (PieceModel piece in AvalableBlocks)
+        {
+            //if(TileMapController.instance.WorldModel.TheWorld[])
+                //TileMapController.instance.PlacePiece(piece);
         }
     }
 }
