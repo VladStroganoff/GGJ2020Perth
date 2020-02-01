@@ -10,7 +10,9 @@ public class BlockPlacement : MonoBehaviour
     private PreviewCast previewCast;
     private GameManager gameManager;
 
-    private GameObject currentBlock;
+    public GameObject currentBlock;
+
+    public bool blockDroppable;
 
     private void Awake()
     {
@@ -31,28 +33,55 @@ public class BlockPlacement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-          //  CreateNewBlock(); we are going to do this on a button press
-        }
-
         if (Input.GetMouseButton(0))
         {
             if (!currentBlock) return;
             Vector3? hit = cubeCast.RaycastOntoCube();
             if (hit != null)
             {
-                TrackBlockForPlacement(hit);
+                PrepBlockForPlacing(hit);
             }
             else
             {
+                blockDroppable = false;
                 hit = previewCast.RaycastOntoPreviewPlane();
-                TrackBlockForPrefab(hit);
+                if(hit != null)
+                {
+                    TrackForPreview(hit);
+
+                    currentBlock.GetComponent<MeshRenderer>().enabled = true;
+                }
+                else
+                {
+                    currentBlock.GetComponent<MeshRenderer>().enabled = false;
+                }
             }
         }
-        if (Input.GetMouseButtonUp(0) && currentBlock)
-            DropBlock();
+
+        if (Input.GetMouseButtonUp(0) && currentBlock) ReleaseBlock();
     }
+
+    private void PrepBlockForPlacing(Vector3? hit)
+    {
+        currentBlock.GetComponent<MeshRenderer>().enabled = true;
+        TrackBlockForPlacement(hit);
+        blockDroppable = true;
+    }
+
+    private void ReleaseBlock()
+    {
+        if (blockDroppable) DropBlock();
+        else DiscardBlock();
+
+        blockDroppable = false;
+    }
+
+    private void DiscardBlock()
+    {
+        Destroy(currentBlock);
+        currentBlock = null;
+    }
+
     private void CreateNewBlock(GameObject newblock)
     {
         currentBlock = Instantiate(newblock);
@@ -69,9 +98,21 @@ public class BlockPlacement : MonoBehaviour
         Vector3Int roundedPosition = new Vector3Int((Vector3)hit);
         Vector3 raisedPosition = new Vector3(roundedPosition.x, 7, roundedPosition.z);
         currentBlock.transform.position = raisedPosition;
+        //currentBlock.transform.eulerAngles = cubeCast.currentHitNormal * 90;
+        //Debug.Log("Position: " + currentBlock.transform.position);
+        float xNormal = cubeCast.currentHitNormal.x;
+        float zNormal = cubeCast.currentHitNormal.z;
+        float yRot;
+        if (zNormal < 0)
+            yRot = 0;
+        else
+            yRot = xNormal * 90 + zNormal * 180;
+        currentBlock.transform.eulerAngles = new Vector3(currentBlock.transform.eulerAngles.x, yRot, currentBlock.transform.eulerAngles.z);
+        Debug.Log("normal is:" + cubeCast.currentHitNormal);
+        Debug.Log("----[" + yRot);
     }
 
-    private void TrackBlockForPrefab(Vector3? hit)
+    private void TrackForPreview(Vector3? hit)
     {
         currentBlock.transform.position = (Vector3)hit;
     }
@@ -81,7 +122,9 @@ public class BlockPlacement : MonoBehaviour
         //turn on gravity
         //release block
         currentBlock.AddComponent<MeshCollider>().convex = true;
-        currentBlock.AddComponent<Rigidbody>();
+        var rigidBody = currentBlock.AddComponent<Rigidbody>();
+        rigidBody.constraints = GetComponent<Rigidbody>().constraints;
+
         currentBlock = null;
     }
 }

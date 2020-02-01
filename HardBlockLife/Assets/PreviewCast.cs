@@ -26,7 +26,7 @@ public class PreviewCast : MonoBehaviour
     {
         Debug.Log("PreviewCasting");
         //Create a ray from the Mouse click position
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
 
         //Initialise the enter variable
         float enter = 0.0f;

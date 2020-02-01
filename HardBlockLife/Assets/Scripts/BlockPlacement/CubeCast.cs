@@ -4,8 +4,7 @@ public class CubeCast : MonoBehaviour
 {
 
     public LayerMask targetLayer;
-
-    public GameObject debugCube;
+    public Vector3 currentHitNormal;
 
     void Start()
     {
@@ -24,12 +23,7 @@ public class CubeCast : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, targetLayer))
         {
             Vector3 hitPoint = ray.GetPoint(hit.distance);
-            //Debug.Log(hitPoint);
-            Debug.Log(hit.collider.gameObject);
-
-            if(debugCube)
-                debugCube.transform.position = hitPoint;
-
+            currentHitNormal = hit.normal;
             return hit.point;
         }
         return null;
