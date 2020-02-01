@@ -13,6 +13,6 @@ public class RenderControl : MonoBehaviour
 
     void RenderPiece(PieceModel onePiece) 
     {
-        Instantiate(onePiece.MyPrefab, new Vector3(onePiece.position.x, onePiece.position.y, onePiece.position.z), Quaternion.identity, Origin);
+        //Instantiate(onePiece.MyPrefab, new Vector3(onePiece.position.x, onePiece.position.y, onePiece.position.z), Quaternion.identity, Origin);
     }
 }

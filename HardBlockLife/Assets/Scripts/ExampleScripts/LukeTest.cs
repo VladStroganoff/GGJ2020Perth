@@ -5,36 +5,34 @@ public class LukeTest : MonoBehaviour
 {
     TileMapController _tileController;
     // Use this for initialization
-    List<Vector3Int> _bricks;
-    private GameObject _prefab;
+    List<Vector3> _bricks;
+    private GameObject _fullBrickPrefab;
 
     void Start()
     {
-        _prefab = gameObject.GetComponent<GameManager>().AvalableBlocks[0].MyPrefab;
+        _fullBrickPrefab = gameObject.GetComponent<GameManager>().AvalableBlocks[0].MyPrefab;
 
         Debug.Log("test");
         var y = 1;
-        _bricks = new List<Vector3Int>
+        _bricks = new List<Vector3>
         {
-            new Vector3Int(2, y, 1),
-            new Vector3Int(4, y, 1),
-            new Vector3Int(6, y, 1),
-            new Vector3Int(6, y, 3),
-            new Vector3Int(6, y, 5),
-            new Vector3Int(4, y, 5),
-            new Vector3Int(2, y, 5),
-            new Vector3Int(3, y, 2)
+            new Vector3(2, y, 1),
+            new Vector3(4, y, 1),
+            new Vector3(6, y, 1),
+            new Vector3(6, y, 3),
+            new Vector3(6, y, 5),
+            new Vector3(4, y, 5),
+            new Vector3(2, y, 5),
+            new Vector3(3, y, 2)
         };
 
         _tileController = TileMapController.instance;
-        foreach (var brick in _bricks)
+        foreach (var brickPosition in _bricks)
         {
-            var newPiece = new PieceModel(TileType.brick)
-            {
-                position = brick,
-                MyPrefab = _prefab
-            };
-            _tileController.PlacePiece(newPiece);
+            var newPieceGameObject = Instantiate(_fullBrickPrefab) as GameObject;
+            newPieceGameObject.transform.position = brickPosition;
+
+            _tileController.AddPiece(newPieceGameObject);
         }
 
         Debug.Log(_tileController.WorldModel);
