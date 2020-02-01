@@ -5,12 +5,13 @@ using System.Collections.Generic;
 /// <summary>
 /// Collection of blocks as a level, can be saved and loaded
 /// </summary>
-public class House : MonoBehaviour
+public class HouseManager : MonoBehaviour
 {
     private BlockTileModel[,,] _theBlockWorld;
     private string _jsonSerialised;
     public GameObject Prefab;
-    
+    public GameObject HouseHolder;
+
     public void LoadLevel(string loadedJson)
     {
         _jsonSerialised = loadedJson;
@@ -25,6 +26,14 @@ public class House : MonoBehaviour
 
     public void LoadPrefabOfHouse(GameObject Prefab)
     {
-        Instantiate(Prefab);
+        var newHouse = Instantiate(Prefab);
+        newHouse.transform.parent = HouseHolder.transform;
+    }
+
+    public void ClearAwayHouse()
+    {
+        Debug.Log(HouseHolder.transform.childCount);
+        if (HouseHolder.transform.childCount > 0)
+            Destroy(HouseHolder.transform.GetChild(0).gameObject);
     }
 }
