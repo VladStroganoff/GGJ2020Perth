@@ -8,7 +8,9 @@ public class Relaxor : MonoBehaviour
     // Start is called before the first frame update
 
     public Slider slider;
+    public Transform roofLocation;
 
+    public GameObject Roof;
 
     // Update is called once per frame
     public void Relax()
@@ -22,7 +24,9 @@ public class Relaxor : MonoBehaviour
             if (collider.transform.name == "enviplane")
                 return;
 
-            if(collider.gameObject.GetComponent<Rigidbody>() != null)
+            collider.gameObject.AddComponent<Rigidbody>();
+
+            if(collider.gameObject.GetComponent<Rigidbody>() != null || collider.gameObject.name != "BlockPlacment")
             {
                 Debug.Log(collider.gameObject.name + " should be updated");
                 collider.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -43,5 +47,8 @@ public class Relaxor : MonoBehaviour
 
         allAllOthers = null;
         allObjectsWithColliders = null;
+
+
+        Instantiate(Roof, roofLocation.position, roofLocation.rotation);
     }
 }
