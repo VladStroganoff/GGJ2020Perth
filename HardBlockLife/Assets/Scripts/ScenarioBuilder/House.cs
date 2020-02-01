@@ -9,7 +9,8 @@ public class House : MonoBehaviour
 {
     private BlockTileModel[,,] _theBlockWorld;
     private string _jsonSerialised;
-
+    public GameObject Prefab;
+    
     public void LoadLevel(string loadedJson)
     {
         _jsonSerialised = loadedJson;
@@ -20,5 +21,10 @@ public class House : MonoBehaviour
     {
         _theBlockWorld = TileMapController.instance.WorldModel.TheWorld;
         _jsonSerialised = JsonUtility.ToJson(_theBlockWorld);
+    }
+
+    public void LoadPrefabOfHouse(GameObject Prefab)
+    {
+        Instantiate(Prefab);
     }
 }
