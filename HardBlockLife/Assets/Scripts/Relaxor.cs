@@ -1,17 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Relaxor : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public Slider slider;
+
     void Start()
     {
         Invoke("Relax", 30f);
     }
 
+
     // Update is called once per frame
-    void Relax()
+    public void Relax()
     {
         BoxCollider[] allObjectsWithColliders = Object.FindObjectsOfType<BoxCollider>();
 
