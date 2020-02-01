@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3962023397756088640}
   - component: {fileID: 3962023397756088643}
   - component: {fileID: 3962023397756088646}
+  - component: {fileID: 1967806625}
+  - component: {fileID: 1967806630}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -70,6 +72,7 @@ MonoBehaviour:
         z: 0
     MyPrefab: {fileID: 1426130948614067748, guid: a489482e543cd9f4c8c31bc662bd7048,
       type: 3}
+    type: 0
 --- !u!114 &3962023397756088646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +86,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Origin: {fileID: 0}
+--- !u!114 &1967806625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962023397756088642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5125e357c323549918b7ff088cb3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCamera: 0
+  LastCamera: 3
+  CameraArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1967806630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962023397756088642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb96e184cc46194ca947641a4927f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 760603418881354576, guid: 60e73e95e437e8f4a86cf9be795eadfc, type: 3}
+  HouseHolder: {fileID: 0}
