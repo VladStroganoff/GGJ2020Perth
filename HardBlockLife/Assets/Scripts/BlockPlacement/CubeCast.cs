@@ -3,6 +3,8 @@
 public class CubeCast : MonoBehaviour
 {
 
+    public LayerMask targetLayer;
+
     public GameObject debugCube;
 
     void Start()
@@ -12,18 +14,14 @@ public class CubeCast : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            GetCubeCoordinates();
-        }
     }
 
-    private void GetCubeCoordinates()
+    public Vector3? RaycastOntoCube()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, targetLayer))
         {
             Vector3 hitPoint = ray.GetPoint(hit.distance);
             Debug.Log(hitPoint);
@@ -31,6 +29,9 @@ public class CubeCast : MonoBehaviour
 
             if(debugCube)
                 debugCube.transform.position = hitPoint;
+
+            return hit.point;
         }
+        return null;
     }
 }

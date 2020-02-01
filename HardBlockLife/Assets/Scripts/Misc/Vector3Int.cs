@@ -18,4 +18,11 @@ public struct Vector3Int
         z = _z;
     }
 
+    public Vector3Int(Vector3 vector)
+    {
+        x = Mathf.RoundToInt(vector.x);
+        y = Mathf.RoundToInt(vector.y);
+        z = Mathf.RoundToInt(vector.z);
+    }
+
 }
