@@ -2,7 +2,7 @@
 
 public class CameraRotation : MonoBehaviour
 {
-	public float rotationSpeed = 0.2f;
+	public float rotationSpeed = -0.05f;
 
 
 
