@@ -15,6 +15,5 @@ public class BlockTileModel
     /// This is the local position of this tile piece if it is in a set of many. If its alone it will just be 0, 0;
     /// </summary>
 
-    public int X;
-    public int Y;
+    public Vector3Int local;
 }

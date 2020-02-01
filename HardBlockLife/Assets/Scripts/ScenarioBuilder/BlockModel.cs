@@ -13,6 +13,5 @@ public class BlockModel
     /// This is the "block set" or piece's origin in world space so where it resides on the world grid;
     /// </summary>
 
-    public int X;
-    public int Y;
+    public Vector3Int local;
 }
