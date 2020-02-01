@@ -324,6 +324,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efab7105d799de46977b8ac9ea1afbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AvalableBlocks:
+  - MyTiles: []
+    MyPrefab: {fileID: 0}
+  - MyTiles: []
+    MyPrefab: {fileID: 0}
+  - MyTiles: []
+    MyPrefab: {fileID: 0}
+  - MyTiles: []
+    MyPrefab: {fileID: 0}
+  - MyTiles: []
+    MyPrefab: {fileID: 0}
 --- !u!114 &1477580058
 MonoBehaviour:
   m_ObjectHideFlags: 0

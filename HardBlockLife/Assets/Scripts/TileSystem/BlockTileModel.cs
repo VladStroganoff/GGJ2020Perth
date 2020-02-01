@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class BlockTileModel
 {
     public BlockTileModel NeighbourNorth; // I dont know what to do in here but maybe we whant to know who out neighbours are?
