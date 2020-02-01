@@ -5,7 +5,10 @@ using UnityEngine;
 public class TileMapController : MonoBehaviour
 {
     public static TileMapController instance;
-    public TileMapModel TheWorld { get; private set; }
+    public TileMapModel WorldModel { get; private set; }
+
+    public delegate void PiecePlaced(BlockModel newPiece);
+    public PiecePlaced PiecePlacedEvent;
 
 
     void Awake()
@@ -15,6 +18,19 @@ public class TileMapController : MonoBehaviour
 
     public void StartWorld(int xSize, int ySize)
     {
-        TheWorld = new TileMapModel(xSize, ySize);
+        WorldModel = new TileMapModel(xSize, ySize);
+    }
+
+    public void PlacePiece(BlockModel newPiece)
+    {
+
+        foreach(newPiece.MyTiles)
+        {
+            //WorldModel.TheWorld[]
+        }
+
+
+        if (PiecePlacedEvent != null)
+            PiecePlacedEvent.Invoke(newPiece);
     }
 }

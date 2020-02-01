@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BlockModel
 {
-    List<BlockTileModel> MyTiles = new List<BlockTileModel>();
+    public List<BlockTileModel> MyTiles = new List<BlockTileModel>();
     public GameObject MyPrefab;
+    public Vector3 Location;
 }
