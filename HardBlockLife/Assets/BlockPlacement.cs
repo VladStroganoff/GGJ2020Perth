@@ -127,7 +127,7 @@ public class BlockPlacement : MonoBehaviour
         //release block
         currentBlock.AddComponent<MeshCollider>().convex = true;
         var rigidBody = currentBlock.AddComponent<Rigidbody>();
-        rigidBody.constraints = GetComponent<Rigidbody>().constraints;
+        rigidBody.constraints = GameObject.Find("RigidBodyYOnly").GetComponent<Rigidbody>().constraints;
 
         currentBlock = null;
     }
