@@ -14,7 +14,7 @@ public class BlockPlacement : MonoBehaviour
     public GameObject currentBlock;
     public GameObject HouseHolder;
 
-    List<GameObject> PlacedBlocksListInOrder;
+    List<GameObject> PlacedBlocksListInOrder = new List<GameObject>();
 
     public bool blockDroppable;
 
