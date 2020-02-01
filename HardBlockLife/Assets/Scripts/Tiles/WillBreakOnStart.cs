@@ -11,8 +11,8 @@ public class WillBreakOnStart : MonoBehaviour
     public void Break()
     {
         var rigidBody = gameObject.AddComponent<Rigidbody>();
-        rigidBody.AddExplosionForce(500f, transform.parent.transform.position, 1000f);
-        Time.
-
+        rigidBody.AddExplosionForce(350f, transform.parent.transform.position, 1000f);
+        var timeToLive = gameObject.AddComponent<TimeToLive>();
+        timeToLive.SetTimeAndStart(5f);
     }
 }
