@@ -7,5 +7,12 @@ public class BlockModel
 {
     public List<BlockTileModel> MyTiles = new List<BlockTileModel>();
     public GameObject MyPrefab;
-    public Vector3 Location;
+
+
+    /// <summary>
+    /// This is "block set" or piece's origin in world space so where it resides on the world grid;
+    /// </summary>
+
+    public int X;
+    public int Y;
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TileMapModel 
 {
-    public TileMapModel[,] TheWorld = null;
+    public BlockTileModel[,] TheWorld = null;
 
 
     public TileMapModel(int height, int width)
     {
-        TheWorld = new TileMapModel[height, width];
+        TheWorld = new BlockTileModel[height, width];
     }
 }

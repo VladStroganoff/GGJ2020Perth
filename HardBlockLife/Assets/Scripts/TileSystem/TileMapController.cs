@@ -24,9 +24,13 @@ public class TileMapController : MonoBehaviour
     public void PlacePiece(BlockModel newPiece)
     {
 
-        foreach(newPiece.MyTiles)
+
+        int i = 0; // to make local space into world space based on the blocks origin
+
+        foreach(BlockTileModel block in newPiece.MyTiles)
         {
-            //WorldModel.TheWorld[]
+            WorldModel.TheWorld[newPiece.LocationX, newPiece.LocationY] = block;
+
         }
 
 
