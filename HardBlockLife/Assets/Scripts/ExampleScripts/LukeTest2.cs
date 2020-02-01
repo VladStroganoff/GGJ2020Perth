@@ -1,19 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class LukeTest : MonoBehaviour
+public class LukeTest2 : MonoBehaviour
 {
     TileMapController _tileController;
     // Use this for initialization
     List<Vector3Int> _bricks;
-    private GameObject _prefab;
 
     void Start()
     {
-        _prefab = gameObject.GetComponent<GameManager>().AvalableBlocks[0].MyPrefab;
-
         Debug.Log("test");
         var y = 1;
+        var prefab = Resources.Load("redbrick_full");
         _bricks = new List<Vector3Int>
         {
             new Vector3Int(2, y, 1),
@@ -29,10 +28,10 @@ public class LukeTest : MonoBehaviour
         _tileController = TileMapController.instance;
         foreach (var brick in _bricks)
         {
-            var newPiece = new PieceModel(TileType.brick)
+            PieceModel newPiece = new PieceModel(TileType.brick)
             {
                 position = brick,
-                MyPrefab = _prefab
+                MyPrefab = Instantiate(prefab) as GameObject
             };
             _tileController.PlacePiece(newPiece);
         }

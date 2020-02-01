@@ -7,7 +7,7 @@ using System.Collections.Generic;
 /// </summary>
 public class House : MonoBehaviour
 {
-    private BlockTileModel[,,] _theBlockWorld = TileMapController.instance.WorldModel.TheWorld;
+    private BlockTileModel[,,] _theBlockWorld;
     private string _jsonSerialised;
 
     public void LoadLevel(string loadedJson)
@@ -18,6 +18,7 @@ public class House : MonoBehaviour
 
     public void SaveLevel()
     {
+        _theBlockWorld = TileMapController.instance.WorldModel.TheWorld;
         _jsonSerialised = JsonUtility.ToJson(_theBlockWorld);
     }
 }
