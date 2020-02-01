@@ -326,15 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvalableBlocks:
   - MyTiles: []
-    MyPrefab: {fileID: 0}
-  - MyTiles: []
-    MyPrefab: {fileID: 0}
-  - MyTiles: []
-    MyPrefab: {fileID: 0}
-  - MyTiles: []
-    MyPrefab: {fileID: 0}
-  - MyTiles: []
-    MyPrefab: {fileID: 0}
+    MyPrefab: {fileID: 1426130948614067748, guid: a489482e543cd9f4c8c31bc662bd7048,
+      type: 3}
 --- !u!114 &1477580058
 MonoBehaviour:
   m_ObjectHideFlags: 0

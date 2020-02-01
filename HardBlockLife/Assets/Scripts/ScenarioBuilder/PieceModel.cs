@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PieceModel
 {
+    public string name;
     public List<BlockTileModel> MyTiles = new List<BlockTileModel>();
     public GameObject MyPrefab;
 
