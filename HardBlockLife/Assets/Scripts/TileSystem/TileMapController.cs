@@ -27,6 +27,7 @@ public class TileMapController : MonoBehaviour
     {
         foreach(BlockTileModel block in newPiece.MyTiles)
         {
+            Debug.Log("Cordinate" + (newPiece.position.x + block.local.x));
             WorldModel.TheWorld[newPiece.position.x + block.local.x, newPiece.position.y + block.local.y, newPiece.position.z + block.local.z] = block; // so origin block will have local position of 0,0 but the other ones will add there local XY values to origin.
         }
 

@@ -12,8 +12,7 @@ public class BlockTileModel
     public BlockTileModel NeighbourUp;
     public BlockTileModel NeighbourDown;
 
-
-
+    public TileType type { get; set; }
 
     /// <summary>
     /// This is the local position of this tile piece if it is in a set of many. If its alone it will just be 0, 0;

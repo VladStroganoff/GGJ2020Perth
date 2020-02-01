@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,27 +12,40 @@ public class GameManager : MonoBehaviour // I dont know. maybe this guy will be 
 
     void Start()
     {
-        foreach(PieceModel piece in AvalableBlocks)
-        {
+        InitializePieces();
+        TestAllBricks();
 
-            TileMapController.instance.PlacePiece(piece);
+    }
+
+    void InitializePieces()
+    {
+        foreach (PieceModel piece  in AvalableBlocks)
+        {
+            piece.Initialize();
         }
     }
 
     void TestAllBricks()
     {
-        int i = 0;
-
-        foreach (PieceModel piece in AvalableBlocks)
+        int j = 0;
+        for (int i = 0; i < TileMapController.instance.WorldModel.TheWorld.Length; i++)
         {
-            if(TileMapController.instance.WorldModel.TheWorld[i,0,0] == null)
+            if (CheckIfPieceIsPlaced(new Vector3Int(i, 0,0)))
             {
-                TileMapController.instance.PlacePiece(piece);
+                    AvalableBlocks[j].position = new Vector3Int(i, 0, 0);
+                    TileMapController.instance.PlacePiece(AvalableBlocks[j]);
+                j++;
             }
-
-
         }
-
-
     }
+
+    private bool CheckIfPieceIsPlaced(Vector3Int pos)
+    {
+        if (TileMapController.instance.WorldModel.TheWorld[pos.x, pos.y, pos.z] == null)
+            return true;
+        else
+            return false;
+    }
+
+
 }
