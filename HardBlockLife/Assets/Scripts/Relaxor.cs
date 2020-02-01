@@ -9,11 +9,6 @@ public class Relaxor : MonoBehaviour
 
     public Slider slider;
 
-    void Start()
-    {
-        Invoke("Relax", 30f);
-    }
-
 
     // Update is called once per frame
     public void Relax()
@@ -45,5 +40,8 @@ public class Relaxor : MonoBehaviour
                 collider.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             }
         }
+
+        allAllOthers = null;
+        allObjectsWithColliders = null;
     }
 }
