@@ -5,17 +5,15 @@ using UnityEngine;
 
 public enum GameStates { TitleScreen, InGame, Paused}
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour // I dont know. maybe this guy will be in charge of scenarios?
 {
-
     public List<PieceModel> AvalableBlocks = new List<PieceModel>();
 
     void Start()
     {
-
-    }
-    void Whatever(PieceModel tile)
-    {
-
+        foreach(PieceModel piece in AvalableBlocks)
+        {
+            TileMapController.instance.PlacePiece(piece);
+        }
     }
 }

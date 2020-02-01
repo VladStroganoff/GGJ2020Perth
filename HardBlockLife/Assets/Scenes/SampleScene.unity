@@ -325,7 +325,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvalableBlocks:
-  - MyTiles: []
+  - name: Red Brick
+    MyTiles:
+    - local:
+        x: 0
+        y: 0
+        z: 0
     MyPrefab: {fileID: 1426130948614067748, guid: a489482e543cd9f4c8c31bc662bd7048,
       type: 3}
 --- !u!114 &1477580058
@@ -340,6 +345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310a863a9bc89b84d983c9ce7db1893f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WorldSize:
+    x: 10
+    y: 10
+    z: 10
 --- !u!4 &1477580059
 Transform:
   m_ObjectHideFlags: 0

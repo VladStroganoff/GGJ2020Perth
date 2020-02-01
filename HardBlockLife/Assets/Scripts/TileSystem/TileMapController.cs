@@ -10,15 +10,17 @@ public class TileMapController : MonoBehaviour
     public delegate void PiecePlaced(PieceModel newPiece);
     public PiecePlaced PiecePlacedEvent;
 
+    public Vector3Int WorldSize;
+
 
     void Awake()
     {
         instance = this;
+        WorldModel = new TileMapModel(WorldSize.x, WorldSize.y, WorldSize.z);
     }
 
     public void StartWorld(int xSize, int ySize, int zSize)
     {
-        WorldModel = new TileMapModel(xSize, ySize, zSize);
     }
 
     public void PlacePiece(PieceModel newPiece)
@@ -31,4 +33,6 @@ public class TileMapController : MonoBehaviour
         if (PiecePlacedEvent != null)
             PiecePlacedEvent.Invoke(newPiece);
     }
+
+
 }
