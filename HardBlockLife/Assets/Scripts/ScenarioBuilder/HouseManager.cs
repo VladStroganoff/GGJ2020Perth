@@ -29,4 +29,11 @@ public class HouseManager : MonoBehaviour
         var newHouse = Instantiate(Prefab);
         newHouse.transform.parent = HouseHolder.transform;
     }
+
+    public void ClearAwayHouse()
+    {
+        Debug.Log(HouseHolder.transform.childCount);
+        if (HouseHolder.transform.childCount > 0)
+            Destroy(HouseHolder.transform.GetChild(0).gameObject);
+    }
 }
