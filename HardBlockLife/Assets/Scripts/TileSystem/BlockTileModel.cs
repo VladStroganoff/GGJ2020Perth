@@ -10,6 +10,4 @@ public class BlockTileModel
     public BlockTileModel NeighbourWest;
     public BlockTileModel NeighbourUp;
     public BlockTileModel NeighbourDown;
-
-
 }
