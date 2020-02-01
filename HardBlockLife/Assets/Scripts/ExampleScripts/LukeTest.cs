@@ -13,7 +13,6 @@ public class LukeTest : MonoBehaviour
     {
         _fullBrickPrefab = gameObject.GetComponent<GameManager>().AvalableBlocks[0].MyPrefab;
 
-        Debug.Log("test");
         var y = 0.5f;
         _bricks = new List<BrickPlacement>
         {
@@ -36,8 +35,6 @@ public class LukeTest : MonoBehaviour
             newPieceGameObject.transform.parent = HouseOrigin.transform;
             _tileController.AddPiece(newPieceGameObject);
         }
-
-        Debug.Log(_tileController.WorldModel);
     }
 
     // Update is called once per frame
