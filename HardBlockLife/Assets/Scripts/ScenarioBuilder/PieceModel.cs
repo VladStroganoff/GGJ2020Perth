@@ -18,7 +18,7 @@ public class PieceModel
     {
         foreach (BlockTileModel tile in MyTiles)
         {
-            tile.type = type;
+            tile.TileType = type;
         }
     }
 
@@ -29,9 +29,4 @@ public class PieceModel
         Initialize();
     }
 
-    /// <summary>
-    /// This is the "block set" or piece's world position
-    /// </summary>
-
-    public Vector3Int position { get; set; }
 }
