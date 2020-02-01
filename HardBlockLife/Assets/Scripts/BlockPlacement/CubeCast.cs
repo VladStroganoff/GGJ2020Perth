@@ -21,10 +21,10 @@ public class CubeCast : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, targetLayer))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, targetLayer))
         {
             Vector3 hitPoint = ray.GetPoint(hit.distance);
-            Debug.Log(hitPoint);
+            //Debug.Log(hitPoint);
             Debug.Log(hit.collider.gameObject);
 
             if(debugCube)
