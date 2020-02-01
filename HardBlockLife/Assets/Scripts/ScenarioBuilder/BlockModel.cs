@@ -10,7 +10,7 @@ public class BlockModel
 
 
     /// <summary>
-    /// This is "block set" or piece's origin in world space so where it resides on the world grid;
+    /// This is the "block set" or piece's origin in world space so where it resides on the world grid;
     /// </summary>
 
     public int X;

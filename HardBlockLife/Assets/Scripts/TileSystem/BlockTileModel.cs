@@ -12,7 +12,7 @@ public class BlockTileModel
     public BlockTileModel NeighbourDown;
 
     /// <summary>
-    /// This is the local position of this tile piece it its in a set of many. It its alone it will just be 0, 0;
+    /// This is the local position of this tile piece if it is in a set of many. If its alone it will just be 0, 0;
     /// </summary>
 
     public int X;
