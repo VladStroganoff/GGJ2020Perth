@@ -10,6 +10,8 @@ public class HouseManager : MonoBehaviour
     private BlockTileModel[,,] _theBlockWorld;
     private string _jsonSerialised;
     public GameObject Prefab;
+    public GameObject Prefab2;
+    public GameObject Prefab3;
     public GameObject HouseHolder;
 
     public void LoadLevel(string loadedJson)
@@ -26,8 +28,18 @@ public class HouseManager : MonoBehaviour
 
     public void LoadPrefabOfHouse(GameObject Prefab)
     {
+        float rand = Random.Range(0,3);
+        if (rand < 1)
+        {
         var newHouse = Instantiate(Prefab);
         newHouse.transform.parent = HouseHolder.transform;
+        }else if(rand == 2){
+            var newHouse = Instantiate(Prefab2);
+        newHouse.transform.parent = HouseHolder.transform;
+        }else {
+            var newHouse = Instantiate(Prefab3);
+        newHouse.transform.parent = HouseHolder.transform;
+        }
     }
 
     public void ClearAwayHouse()
