@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2707221182188610615}
   - component: {fileID: 6398205416224644609}
   - component: {fileID: 862004497676182264}
+  - component: {fileID: 936329114158198739}
   m_Layer: 0
   m_Name: redbrick_half
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &936329114158198739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426130948614067748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2314116436478263487
 PrefabInstance:
   m_ObjectHideFlags: 0

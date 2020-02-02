@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dec9ce30c3d50b4d91413d22aea6bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putDownFx: {fileID: 0}
+  audioData: {fileID: 0}
 --- !u!1 &3584217755492728636
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +105,7 @@ GameObject:
   - component: {fileID: 8844485178816689945}
   - component: {fileID: 2990782694135729120}
   - component: {fileID: 7652286946953945748}
+  - component: {fileID: 8754111923644313014}
   m_Layer: 0
   m_Name: window_simple_single
   m_TagString: Untagged
@@ -184,6 +187,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dec9ce30c3d50b4d91413d22aea6bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putDownFx: {fileID: 0}
+  audioData: {fileID: 0}
+--- !u!65 &8754111923644313014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584217755492728636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09994731, y: 0.09983871, z: 0.11890428}
+  m_Center: {x: -0.00008394569, y: -0.000080645084, z: 0.009452039}
 --- !u!1001 &8074477537584944295
 PrefabInstance:
   m_ObjectHideFlags: 0

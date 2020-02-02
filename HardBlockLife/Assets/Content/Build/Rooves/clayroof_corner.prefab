@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6573219998399976143}
   - component: {fileID: 577672037633633846}
   - component: {fileID: 8284324906415490061}
+  - component: {fileID: 2194750755604657034}
   m_Layer: 0
   m_Name: clayroof_corner
   m_TagString: Untagged
@@ -92,6 +93,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dec9ce30c3d50b4d91413d22aea6bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  putDownFx: {fileID: 0}
+  audioData: {fileID: 0}
+--- !u!65 &2194750755604657034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168855235775830762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5237436458903167816
 PrefabInstance:
   m_ObjectHideFlags: 0
