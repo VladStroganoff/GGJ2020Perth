@@ -13,7 +13,7 @@ public class HouseManager : MonoBehaviour
     public GameObject Prefab2;
     public GameObject Prefab3;
     public GameObject HouseHolder;
-
+    public GameObject[] comps;
     public void LoadLevel(string loadedJson)
     {
         _jsonSerialised = loadedJson;
@@ -46,5 +46,10 @@ public class HouseManager : MonoBehaviour
     {
         for(var i = 0; i < HouseHolder.transform.childCount; i++)
             Destroy(HouseHolder.transform.GetChild(i).gameObject);
+        comps = GameObject.FindGameObjectsWithTag("components");
+        foreach (GameObject gameObject in comps)
+        {
+            Destroy(gameObject);
+        }
     }
 }

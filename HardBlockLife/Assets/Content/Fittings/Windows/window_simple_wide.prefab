@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 7470060678074126245}
   m_Layer: 0
   m_Name: window_simple_wide
-  m_TagString: Untagged
+  m_TagString: components
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
