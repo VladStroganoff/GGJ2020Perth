@@ -1527,6 +1527,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockPlacement
       objectReference: {fileID: 0}
+    - target: {fileID: 2284469594187015892, guid: 5f25d31a50f12ee4091d3d269dee8ba5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2284469594187015897, guid: 5f25d31a50f12ee4091d3d269dee8ba5,
         type: 3}
       propertyPath: m_LocalPosition.x
